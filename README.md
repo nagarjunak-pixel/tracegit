@@ -1,6 +1,6 @@
 # tracegit — Git for AI Agent Execution Traces
 
-[![CI](https://github.com/nagarjunak-pixel/tracegit/actions/workflows/ci.yml/badge.svg)](https://github.com/nagarjunak-pixel/tracegit/actions/workflows/ci.yml)
+[![TraceGit CI](https://github.com/nagarjunak-pixel/tracegit/actions/workflows/ci.yml/badge.svg)](https://github.com/nagarjunak-pixel/tracegit/actions/workflows/ci.yml)
 [![Python 3.13](https://img.shields.io/badge/python-3.13-3776AB.svg)](https://www.python.org/)
 [![C++20 Native](https://img.shields.io/badge/C%2B%2B20-Wagner--Fischer%20%2B%20Thrash-00599C.svg)](csrc/tracegit_kernels.cpp)
 [![MCP Ready](https://img.shields.io/badge/MCP-Claude%20Code%20%7C%20Cursor-8B5CF6.svg)](src/tracegit/mcp/server.py)
@@ -45,7 +45,7 @@ Add this to `.mcp.json` in your repository (or run `tracegit mcp-stdio`):
 
 ---
 
-## Verified Zero-Mock Benchmarks
+## Measured Benchmarks
 
 Every metric below is reproducibly measured via CLI (`tracegit ...`) and `pytest` + `Hypothesis` (`97.55%` line coverage):
 
