@@ -1,13 +1,17 @@
 cff-version: 1.2.0
-message: "If you use or reference tracegit in AI agent observability, CI regression testing, or MCP tooling, please cite it as below."
-type: software
-title: "tracegit: Local-First Git for AI Agent Execution Traces with Native C++20 Wagner–Fischer Alignment, Loop-Thrash Detection, Merkle DAG Store & MCP Server"
-version: 1.0.0
-date-released: "2026-11-17"
-license: MIT
-url: "https://nagarjunak-pixel.github.io/projects.html#tracegit"
-repository-code: "https://github.com/nagarjunak-pixel/tracegit"
+message: "If you use or reference this software architecture, please cite it as below."
 authors:
   - family-names: "Kamireddy"
     given-names: "Nagarjuna Reddy"
-    affiliation: "Suryagentic AI"
+    alias: "Nagarjuna Kamireddy"
+    website: "https://nagarjunak-pixel.github.io/"
+title: "TraceGit — Git-Like SHA-256 Merkle DAG & C++20 Trajectory Bisection for AI Agents"
+version: 1.0.0
+date-released: 2026-11-18
+url: "https://nagarjunak-pixel.github.io/github-projects-atlas.html"
+repository-code: "https://github.com/nagarjunak-pixel/tracegit"
+references:
+  - type: web
+    title: "Nagarjuna Kamireddy — Official LinkedIn Profile & Autonomous SAP Newsletter"
+    url: "https://www.linkedin.com/in/nagarjuna-kamireddy/"
+license: MIT
