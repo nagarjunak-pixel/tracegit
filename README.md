@@ -5,10 +5,17 @@
 [![C++20 Native](https://img.shields.io/badge/C%2B%2B20-Wagner--Fischer%20%2B%20Thrash-00599C.svg)](csrc/tracegit_kernels.cpp)
 [![MCP Ready](https://img.shields.io/badge/MCP-Claude%20Code%20%7C%20Cursor-8B5CF6.svg)](src/tracegit/mcp/server.py)
 [![Coverage 97.55%](https://img.shields.io/badge/coverage-97.55%25-10B981.svg)](tests/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-F59E0B.svg)](LICENSE)
+[![Release v1.0.0](https://img.shields.io/badge/release-v1.0.0-1f6feb.svg)](https://github.com/nagarjunak-pixel/tracegit/releases/tag/v1.0.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-10b981.svg)](LICENSE)
 
 > **Stop losing hours reading giant JSON logs when an AI agent loops, skips tests, or blows up token budgets.**
 > `tracegit` brings **`git log`**, **`git diff`**, **`git bisect`**, a **CI pre-ship regression gate**, and a **drop-in Claude Code / Cursor `MCP` server** to local AI agent trajectories.
+
+---
+
+## Live Trajectory Diff, Bisect & Loop-Thrash Workbench
+
+![tracegit Live Workbench — Native C++20 Wagner–Fischer Step Alignment, First-Divergence Bisect & Loop-Thrash CI Gate](docs/assets/workbench-preview.png)
 
 ---
 
@@ -75,3 +82,12 @@ uv run tracegit serve --host 127.0.0.1 --port 8100
 ## Author & License
 
 Designed and engineered by **Nagarjuna Kamireddy** (`@nagarjunak-pixel`). Released under the [MIT License](LICENSE).
+
+---
+
+## Author & Canonical Portfolio
+
+Engineered by **Nagarjuna Reddy Kamireddy** (*Principal / Lead AI Architect · Dubai, UAE*).
+- **Architecture Portfolio & Case Studies:** [https://nagarjunak-pixel.github.io/](https://nagarjunak-pixel.github.io/)
+- **Open-Source Suite:** [https://nagarjunak-pixel.github.io/projects.html#tracegit](https://nagarjunak-pixel.github.io/projects.html#tracegit)
+- **GitHub:** [@nagarjunak-pixel](https://github.com/nagarjunak-pixel) · **LinkedIn:** [in/nagarjuna-kamireddy](https://linkedin.com/in/nagarjuna-kamireddy)

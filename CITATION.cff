@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use or reference tracegit in AI agent observability, CI regression testing, or MCP tooling, please cite it as below."
+type: software
+title: "tracegit: Local-First Git for AI Agent Execution Traces with Native C++20 Wagner–Fischer Alignment, Loop-Thrash Detection, Merkle DAG Store & MCP Server"
+version: 1.0.0
+date-released: "2026-11-17"
+license: MIT
+url: "https://nagarjunak-pixel.github.io/projects.html#tracegit"
+repository-code: "https://github.com/nagarjunak-pixel/tracegit"
+authors:
+  - family-names: "Kamireddy"
+    given-names: "Nagarjuna Reddy"
+    affiliation: "Suryagentic AI"
