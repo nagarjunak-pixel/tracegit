@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "tracegit"
 version = "1.0.0"
-description = "Local-First Git for AI Agent Execution Traces: Native C++20 Trajectory Alignment & Loop-Thrash Kernel, Content-Addressable SHA-256 Merkle DAG Store, CI Regression Gate & Drop-In Claude Code / Cursor MCP Server"
+description = "Git-like local history for AI agent traces — SQLite/SHA-256 Merkle store, C++20 edit-distance diff/bisect, loop detection, CI gate, MCP server. Prototype"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.12"

@@ -8,8 +8,8 @@
 [![Release v1.0.0](https://img.shields.io/badge/release-v1.0.0-1f6feb.svg)](https://github.com/nagarjunak-pixel/tracegit/releases/tag/v1.0.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-10b981.svg)](LICENSE)
 
-> **Stop losing hours reading giant JSON logs when an AI agent loops, skips tests, or blows up token budgets.**
-> `tracegit` brings **`git log`**, **`git diff`**, **`git bisect`**, a **CI pre-ship regression gate**, and a **drop-in Claude Code / Cursor `MCP` server** to local AI agent trajectories.
+> **A small, local prototype for versioning and comparing AI agent tool-call traces.**
+> `tracegit` stores agent trajectories as commits in a SQLite database (with a SHA-256 Merkle root over steps), and offers `log`-, `diff`- and `bisect`-style commands built on an edit-distance step alignment (C++20 helper with a pure-Python fallback), a simple n-gram repeated-call detector, a rule-based CI regression gate, and a minimal stdio MCP server exposing these as tools.
 
 ---
 
@@ -54,6 +54,16 @@ Every metric below is reproducibly measured via CLI (`tracegit ...`) and `pytest
 | **`C++20` Wagner-Fischer Diff** | Baseline `3aaf3dbc9382` (`5` steps) vs Regressed `bfba399ad924` (`8` steps): **`4` edit ops (`50.0%` match)** | Exact C++20-vs-Python parity & metric symmetry (`Hypothesis`-verified) |
 | **`bisect` & Loop-Thrash** | First divergence: **`step #2 (read_file)`**; **`2` wasted thrash steps (`610` tok)** detected | CI Gate **BLOCK**s regressed candidate (`4` violations) & **PASS**es repaired `bf3386185537` |
 | **Live `qwen3.5:4b` Audit** | 6 multi-step coding/K8s/CI agent tasks: **`v1: 0.0% -> v2 Guarded: 100.0%` verified (`20.6%` token cut)** | Zero duplicate retries; mandatory `read -> edit -> run_pytest` completion (`benchmarks/real_qwen_tracegit.json`) |
+
+---
+
+## Scope & Limitations
+
+- **Small codebase:** ~1.5k lines of Python in `src/` plus a ~180-line C++20 helper (`csrc/tracegit_kernels.cpp`, loaded via `ctypes`, with an equivalent pure-Python fallback). It is a prototype, not a production-hardened tool.
+- **Diff/bisect results are on demo traces:** the 5-step vs 8-step diff and the thrash/gate numbers above come from the hand-built traces seeded by `tracegit demo`, not from real-world agent logs.
+- **The `qwen3.5:4b` audit is a small, self-constructed check:** 6 hand-written tasks run against a small local 4B model via Ollama (single machine, no GPU cluster). The model only emits a JSON tool-call *plan*; tools are not executed, and "verified" means the plan passes a structural heuristic (read → edit → test on the target file). The v1 vs v2 difference reflects two prompt styles, and per-step token counts are derived from the model's total output tokens.
+- **Simplified storage & alignment:** step hashes are 64-bit `blake2b` digests of tool name, status and argument summary; alignment is plain O(n·m) Wagner–Fischer; loop detection is a sliding n-gram (n = 1–3) repeat counter. There is no remote sync, branching/merge semantics, or multi-user concurrency.
+- **Integrations are minimal:** the trace importers and MCP server (4 tools over stdio JSON-RPC) cover the formats exercised in the tests; they have not been validated against every Claude Code / Cursor / OpenAI trace variant.
 
 ---
 
